@@ -6,5 +6,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx
-# EXPOSE 80
+# EXPOSE TO AWS means Port Mapping , map Container Port 80 to Local VM Port 80
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
